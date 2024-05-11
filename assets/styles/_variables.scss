@@ -1,0 +1,25 @@
+// Breakpoints
+$breakpoints-to: (
+    xxs: 370px,
+    xs: 575.98px,
+    sm: 767.98px,
+    md: 991.98px,
+    lg: 1199.98px,
+    xl: 1399.98px,
+);
+
+$breakpoints-from: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+$container-sizes: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1170px,
+    xxl: 1440px,
+);

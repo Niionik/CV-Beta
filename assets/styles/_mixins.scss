@@ -1,0 +1,141 @@
+@mixin media($size, $type: max, $dimension: width) {
+    @if $type=='max' {
+        @media all and (#{$type}-#{$dimension}: ($size - 1)) {
+            @content;
+        }
+    }
+
+    @if $type=='min' {
+        @media all and (#{$type}-#{$dimension}: $size) {
+            @content;
+        }
+    }
+}
+
+@mixin media-up($size) {
+    @if (map-has-key($map: $breakpoints-from, $key: $size)) {
+        $breakpoint: map-get($map: $breakpoints-from,
+                $key: $size,
+            );
+
+        @media (min-width: $breakpoint) {
+            @content;
+        }
+    }
+
+    @else {
+        @error 'Podano błędny zakres';
+    }
+}
+
+@mixin media-down($size) {
+    @if (map-has-key($map: $breakpoints-to, $key: $size)) {
+        $breakpoint: map-get($map: $breakpoints-to,
+                $key: $size,
+            );
+
+        @media (max-width: $breakpoint) {
+            @content;
+        }
+    }
+
+    @else {
+        @error 'Podano błędny zakres';
+    }
+}
+
+@mixin media-between($from, $to) {
+    @if (map-has-key($map: $breakpoints-from, $key: $from) and map-has-key($map: $breakpoints-from, $key: $to)) {
+        $breakpoint-from: map-get($map: $breakpoints-from,
+                $key: $from,
+            );
+        $breakpoint-to: map-get($map: $breakpoints-from,
+                $key: $to,
+            ) - 0.02px;
+
+        @media (min-width: $breakpoint-from) and (max-width: $breakpoint-to) {
+            @content;
+        }
+    }
+
+    @else {
+        @error 'Podano błędny zakres';
+    }
+}
+
+@mixin media-only($size) {
+    @if ($size=='xs') {
+        $breakpoint: map-get($map: $breakpoints-to,
+                $key: $size,
+            );
+
+        @media (max-width: $breakpoint) {
+            @content;
+        }
+    }
+
+    @else if($size=='xl') {
+        $breakpoint: map-get($map: $breakpoints-from,
+                $key: $size,
+            );
+
+        @media (min-width: $breakpoint) {
+            @content;
+        }
+    }
+
+    @else {
+        @if (map-has-key($map: $breakpoints-from, $key: $size) and map-has-key($map: $breakpoints-to, $key: $size)) {
+            $breakpoint-from: map-get($map: $breakpoints-from,
+                    $key: $size,
+                );
+            $breakpoint-to: map-get($map: $breakpoints-to,
+                    $key: $size,
+                );
+
+            @media (min-width: $breakpoint-from) and (max-width: $breakpoint-to) {
+                @content;
+            }
+        }
+
+        @else {
+            @warn 'Podano błędny zakres';
+        }
+    }
+}
+
+
+@mixin all-headings {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        @content;
+    }
+}
+
+@mixin container() {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@mixin disable-selection() {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
