@@ -1,0 +1,29 @@
+@import './libs/lenis/base.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+
+  @include disable-selection();
+}
+
+img {
+  max-width: 100%;
+  overflow: auto;
+}
+
+section[id] {
+  scroll-margin-top: 77px;
+
+  @include media-up(xl) {
+    scroll-margin-top: 90px;
+  }
+}

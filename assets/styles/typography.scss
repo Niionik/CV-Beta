@@ -1,0 +1,33 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: var(--line-height-base);
+    color: var(--color-text-1);
+}
+
+@for $i from 1 through 4 {
+    h#{$i},
+    .h#{$i} {
+        font-size: var(--font-size-h#{$i});
+        line-height: var(--line-height-h#{$i});
+    }
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4  {
+    font-family: var(--font-family-secondary);
+    font-weight: 500;
+
+    strong {
+        font-weight: inherit;
+        color: var(--color-primary);
+    }
+}
+
+h1, h2, .h1, .h2  {
+    text-transform: uppercase;
+}
