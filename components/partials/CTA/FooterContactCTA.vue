@@ -2,7 +2,7 @@
     <div>
         <NuxtLink to="mail:patrycja@wrzalek.dev" title="Kliknij, aby napisać">
             <span class="label">Pokodujmy wspólnie </span>
-            <span>- napisz <span class="value"></span></span>
+            <span>- napisz, pogadamy <span class="value"></span></span>
         </NuxtLink>
     </div>
 </template>

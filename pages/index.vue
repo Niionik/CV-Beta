@@ -17,6 +17,9 @@ definePageMeta({
 <template>
     <div>
         <HeroSection />
+        <GitHub/>
+        <MyCarrier/>
+        <Badges/>
     </div>
 </template>
 <style lang="scss">
