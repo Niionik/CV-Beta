@@ -1,0 +1,29 @@
+.carousel {
+    .navigation {
+        border: 1px solid var(--color-primary);
+
+        svg {
+            display: none;
+        }
+
+        &:before {
+            content: '';
+            width: 1rem;
+            height: 1rem;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.75rem;
+            background-image: url('data:image/svg+xml,<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.01367 7.00195H13.9883" stroke="%23FF7F00" stroke-linecap="round"/><path d="M8.98633 1.00195L14.9863 7.00195" stroke="%23FF7F00" stroke-linecap="round"/><path d="M8.98633 13L14.9863 7" stroke="%23FF7F00" stroke-linecap="round"/></svg>');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__prev {
+        &:before {
+            transform: rotateY(180deg);
+            right: auto;
+            left: 0.75rem;
+        }
+    }
+}
