@@ -20,8 +20,12 @@ export default defineNuxtConfig({
     'vue3-carousel-nuxt',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@hypernym/nuxt-gsap',
     '@zadigetvoltaire/nuxt-gtm'
   ],
+  // gsap: {
+  //  ScrollTrigger,
+  // }
   image: {
     quality: 90,
     format: ['webp'],

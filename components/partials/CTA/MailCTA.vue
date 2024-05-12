@@ -1,7 +1,7 @@
 <template>
     <div>
-        <NuxtLink to="mail:patrycja@wrzalek.dev" title="Kliknij, aby napisać wiadomość">
-            <span class="label">Napisz: </span> <span class="value">patrycja@wrzalek.dev</span>
+        <NuxtLink to="mailto:patrycja@wrzalek.dev" title="Kliknij, aby napisać maila">
+            <span>patrycja@wrzalek.dev</span>
         </NuxtLink>
     </div>
 </template>
@@ -29,6 +29,12 @@ a {
 
     .value {
         white-space: nowrap;
+    }
+}
+
+.email-cta{
+    @include media-down(sm){
+        display: none;
     }
 }
 </style>

@@ -9,23 +9,17 @@ const links = [
         },
     },
     {
-        name: 'Portfolio',
-        to: {
-            path: "/",
-            hash: "#portfolio"
-        },
-    },
-    {
         name: 'Certyfikaty',
         to: {
             path: "/",
-            hash: "#Certyfikaty"
+            hash: "#certyfikaty"
         },
     },
     {
         name: 'Moja kariera',
         to: {
-            path: "/moja-kariera",
+            path: "/",
+            hash: "#moja-kariera"
         },
     },
     {
